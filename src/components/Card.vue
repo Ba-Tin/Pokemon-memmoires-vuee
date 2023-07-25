@@ -32,7 +32,10 @@ export default {
       default: function () {
         return []
       }
-    }
+    },
+    rules: {
+      type: Array,
+    },
   },
   data() {
     return {
@@ -42,6 +45,7 @@ export default {
   },
   methods: {
     onToogleFlipCard() {
+      if (this.rules.length >= 2) return;
       if (this.isDisabled) return false
       this.isFlipped = !this.isFlipped
       if (this.isFlipped) this.$emit("onFlip", this.card);

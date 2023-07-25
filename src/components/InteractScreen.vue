@@ -4,7 +4,8 @@
       width: `${((((750 - 16 * 4) / Math.sqrt(cardsContext.length) - 16) * 3) / 4 + 16) * Math.sqrt(cardsContext.length)}px`
     }">
       <card-flip v-for="(card, index) in cardsContext" :key="index" :ref="`card-${index}`" :cardsContext="cardsContext"
-        :imgBackFaceUrl="`images/${card}.png`" :card="{ index, value: card }" @onFlip="checkRule($event)" />
+        :imgBackFaceUrl="`images/${card}.png`" :card="{ index, value: card }" @onFlip="checkRule($event)"
+        :rules="rules" />
     </div>
 
   </div>
